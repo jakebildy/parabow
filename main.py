@@ -4,15 +4,24 @@ import requests
 import RPi.GPIO as GPIO
 import time 
 import os
+import Bluetooth
 
-r = requests.get('https://google.ca')
+server_socket=bluetooth.BluetoothSocket(bluetooth.RFCOMM)
 
-#print(r.text)
+port = 1
+server_socket.listen(1)
 
-for i in range(3):
+client_socket,address = server_socket.accept()
+print ("Connected to " + address + " lmaoo")
 
-	time.sleep(3)
+while 1:
+	data = client_socket.recv(1024)
+	if data == "fire" :
+		os.system("omxplayer -o local firing.wav")
+	
+client_socket.close()
+server_socket.close() 
 
-	os.system("omxplayer -o local firing.wav")
+
 
 
