@@ -7,6 +7,18 @@
     tools:context="design1050.parabowapp.MainActivity">
 
     <ImageView
+        android:id="@+id/background"
+        android:layout_width="385dp"
+        android:layout_height="544dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/main_background" />
+
+    <ImageView
         android:id="@+id/imageView2"
         android:layout_width="317dp"
         android:layout_height="131dp"
@@ -16,26 +28,17 @@
         app:srcCompat="@drawable/parabow_logo"
         tools:layout_editor_absoluteY="16dp" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="128dp"
-        android:layout_height="101dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+    <Button
+        android:id="@+id/button"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="225dp"
+        android:layout_height="51dp"
+        android:background="@drawable/button_connect"
+        android:backgroundTint="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/background"
+        app:layout_constraintEnd_toStartOf="@+id/background"
+        app:layout_constraintStart_toEndOf="@+id/background"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.103"
-        app:srcCompat="@android:drawable/ic_menu_search" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Connect ParaBow"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton"
-        app:layout_constraintVertical_bias="0.741" />
 </android.support.constraint.ConstraintLayout>
