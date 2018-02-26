@@ -15,14 +15,15 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
 
-        Button button = findViewById(R.id.button);
+    public void onClick(View v)
+    {
 
-       button.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               startActivity(intent);
-           }
-       });
+        switch (v.getId())
+        {
+            case R.id.button :
+                this.startActivity(intent);
+        }
     }
 }
