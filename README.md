@@ -27,7 +27,7 @@ By using voice command to fire the bow, these issues can be resolved, enabling p
 # ASCII Art of Prof. Dickinson 
                                                                                                                                                                                                                                                                 
                                                                                                                                                                                                         
-                                                                  @@@@@@@@@@@@@@@@                                         
+                                               @@@@@@@@@@@@@@@@                                         
                                           @@@@@@@@@@@@@@@@@@@@@@@@@                                   
                                   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                              
                                 @@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                         
