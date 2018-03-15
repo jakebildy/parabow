@@ -6,6 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,7 +38,8 @@ public class BluetoothDevices extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 TextView textView = (TextView) listView.getChildAt(i);
-                textView.setText("ANGERY REACT >:[");
+                textView.setText("connecting...");
+                textView.setTextColor(Color.RED);
             }
         });
 
