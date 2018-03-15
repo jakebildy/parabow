@@ -7,23 +7,34 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.VideoView;
 
+import static java.lang.Thread.sleep;
+
 public class MainActivity extends AppCompatActivity {
 
-    Intent intent = new Intent(this, BluetoothDevices.class);
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
-    public void onClick(View v)
-    {
 
-        switch (v.getId())
+        final Intent intent = new Intent(this, BluetoothDevices.class);
+
+        Thread thread = new Thread(new Runnable()
         {
-            case R.id.button :
-                this.startActivity(intent);
-        }
+            @Override
+            public void run()
+            {
+                try {
+                    sleep(3000);
+
+                    startActivity(intent);
+
+                }
+                catch (Exception e)
+                {}
+            }
+
+        });
+        thread.start();
     }
 }

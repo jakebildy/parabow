@@ -30,7 +30,7 @@
         tools:layout_editor_absoluteY="16dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonBow"
         style="@android:style/Widget.Button.Inset"
         android:layout_width="225dp"
         android:layout_height="51dp"
