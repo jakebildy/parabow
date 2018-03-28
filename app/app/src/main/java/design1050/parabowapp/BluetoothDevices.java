@@ -33,13 +33,30 @@ public class BluetoothDevices extends AppCompatActivity {
 
         listView = findViewById(R.id.bluetoothList);
 
+        final Intent intent = new Intent(this, ConnectedBow.class);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 TextView textView = (TextView) listView.getChildAt(i);
+                //For demo purposes only
                 textView.setText("connecting...");
                 textView.setTextColor(Color.RED);
+
+                Runnable switchToNext = new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(3000);
+                            startActivity(intent);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                };
+                switchToNext.run();
             }
         });
 
