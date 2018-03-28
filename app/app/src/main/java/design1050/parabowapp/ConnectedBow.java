@@ -98,7 +98,7 @@ public class ConnectedBow extends AppCompatActivity   {
                     s2tText.setText("You said: " + result.get(0));
 
 
-                    if (result.get(0) == "fire")
+                    if (result.get(0).equals("fire"))
                     {
                         sendFireMsg();
                     }
