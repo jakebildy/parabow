@@ -44,11 +44,13 @@ public class BluetoothDevices extends AppCompatActivity {
                 textView.setText("connecting...");
                 textView.setTextColor(Color.RED);
 
+
                 Runnable switchToNext = new Runnable() {
                     @Override
                     public void run() {
                         try {
                             Thread.sleep(3000);
+                            unregisterReceiver(mReceiver);
                             startActivity(intent);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
