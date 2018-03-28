@@ -74,12 +74,25 @@
         android:id="@+id/speech2text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="hello!"
+        android:text="tap button to begin"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.465" />
+
+    <Button
+        android:id="@+id/speechButton"
+        style="@android:style/Widget.DeviceDefault.Button.Inset"
+        android:layout_width="91dp"
+        android:layout_height="92dp"
+        android:background="@drawable/fire_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.682" />
 
 </android.support.constraint.ConstraintLayout>

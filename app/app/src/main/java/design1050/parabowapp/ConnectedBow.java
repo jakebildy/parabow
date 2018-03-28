@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,7 +33,10 @@ public class ConnectedBow extends AppCompatActivity   {
         UUID uuid = UUID.fromString("94f39d29-7d6d-437d-973b-fba39e49d4ee"); //Standard SerialPortService ID
         try {
 
-            socket = device.createRfcommSocketToServiceRecord(uuid);
+            if (socket == null)
+            {
+                socket = device.createRfcommSocketToServiceRecord(uuid); 
+            }
             if (!socket.isConnected()){
                 socket.connect();
             }
@@ -52,6 +57,14 @@ public class ConnectedBow extends AppCompatActivity   {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connected_bow);
 
+        Button speechButton = (Button) findViewById(R.id.speechButton);
+        speechButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startAudio2Text();
+            }
+        });
+
         BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
 
         if(adapter.getBondedDevices().size() > 0)
@@ -65,7 +78,6 @@ public class ConnectedBow extends AppCompatActivity   {
                 }
             }
         }
-        startAudio2Text();
     }
 
     public void startAudio2Text() {
