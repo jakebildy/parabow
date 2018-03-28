@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/background"
-        android:layout_width="385dp"
+        android:layout_width="383dp"
         android:layout_height="544dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,5 +69,17 @@
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.195" />
+
+    <TextView
+        android:id="@+id/speech2text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hello!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

@@ -3,12 +3,20 @@ package design1050.parabowapp;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
+import android.content.Intent;
+import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Set;
 import java.util.UUID;
 
@@ -57,8 +65,47 @@ public class ConnectedBow extends AppCompatActivity   {
                 }
             }
         }
+        startAudio2Text();
+    }
 
-        sendFireMsg();
+    public void startAudio2Text() {
+        Intent i = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        i.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        i.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+        i.putExtra(RecognizerIntent.EXTRA_PROMPT, "Say the trigger word to fire the bow");
+
+        try {
+            startActivityForResult(i, 100);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent i)
+    {
+        super.onActivityResult(requestCode,resultCode,i);
+
+        switch(requestCode) {
+
+            case 100:
+                if (resultCode == RESULT_OK && i != null)
+                {
+                    ArrayList<String> result = i.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    TextView s2tText = (TextView) findViewById(R.id.speech2text);
+                    s2tText.setText("You said: " + result.get(0));
+
+
+                    if (result.get(0) == "fire")
+                    {
+                        sendFireMsg();
+                    }
+                }
+                break;
+
+        }
     }
 }
 
