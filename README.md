@@ -2,11 +2,10 @@
 
 Parabow uses a voice recognition release system to allow paraplegic athletes to compete in para-archery without having to use their mouth/neck as release mechanism.
 
-Code comprises three sections - 
+Code comprises two sections - 
 
-1. The companion app to allow the bow to connect to WiFi
+1. The companion app to allow the bow to connect to the phone with Bluetooth, which also does the speech-to-text analysis
 2. The source code for the actual release mechanism
-3. The server-side python code to actually analyze the audio
 
 # About
 Paralympic archery, known as para archery by the International Paralympic Committee, has a long history, being present at the first Paralympics in Rome in 1960.
@@ -28,6 +27,7 @@ By using voice command to fire the bow, these issues can be resolved, enabling p
 
 # Video Demonstration
 (Dramatic facial expressions not included)
+
 [![Watch the video](http://img.youtube.com/vi/qQZ-nHc6CSI/0.jpg)](https://youtu.be/qQZ-nHc6CSI)
 
 # ASCII Art of Prof. Dickinson 
