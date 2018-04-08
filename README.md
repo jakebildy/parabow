@@ -17,12 +17,18 @@ By using voice command to fire the bow, these issues can be resolved, enabling p
 
 
 # Technical Details
+
  **Frontend**: Java (Android Studio)
  
- **Server**: PythonAnywhere server
+ **Release Mechanism Infrastructure**: Raspberry Pi running Python
  
- **Release Mechanism Infrastructure**: Raspberry Pi running Python3
+ Communication between the Raspberry Pi and Android app is done via Bluetooth, using RFCOMM due to its simplicity.
+ 
+ Speech to text is done via Google Cloud Speech API, as already incorporated into Android 
 
+# Video Demonstration
+(Dramatic facial expressions not included)
+[![Watch the video](http://img.youtube.com/vi/qQZ-nHc6CSI/0.jpg)](https://youtu.be/qQZ-nHc6CSI)
 
 # ASCII Art of Prof. Dickinson 
                                                                                                                                                                                                                                                                 
